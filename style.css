@@ -1,3 +1,31 @@
+/*      All         */
 * {
   font-family: "Open Sans", sans-serif;
+}
+
+/*    블라인드 처리   */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+#navbar #navbar__menu {
+  display: flex;
+  list-style: none;
+}
+
+#logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.home__propileImage img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid whitesmoke;
 }
