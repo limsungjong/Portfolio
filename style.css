@@ -29,3 +29,8 @@ main #home #home__avatar {
   border-radius: 50%;
   border: 1px solid whitesmoke;
 }
+
+#myWork .work__projects img {
+  width: 200px;
+  height: 300px;
+}
