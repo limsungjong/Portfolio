@@ -1,8 +1,37 @@
-/*      All         */
-* {
+/*      Root         */
+:root {
+  /*    Font     */
   font-family: "Open Sans", sans-serif;
+  /*    Color    */
+  --color-true-black: #000000;
+  --color-black: #1b1b1b;
+  --color-light-gray: #6d6d6d;
+  --color-dark-gray: #424242;
+  --color-white: #f5f5f5;
+  --color-red: #ea3323;
+  --color-blue: #3ea4f8;
+  --color-sky-blue: #5ca4f8;
+  --color-sun-gray: #d6d6d6;
+  --color-cream-melon: #dcf8e4;
+  --color-light-sky-blue: #b9eeff;
+  --color-banana: #ffe062;
+  --color-ivory: #fff3d4;
+  /*  Size    */
+  /*    Font  Size     */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+  /*    Font Weight    */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
 }
-
+/*  Universal tags */
+* {
+  box-sizing: border-box;
+}
 /*    블라인드 처리   */
 .blind {
   position: absolute;
