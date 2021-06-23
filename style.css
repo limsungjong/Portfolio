@@ -14,6 +14,8 @@
   --color-light-sky-blue: #b9eeff;
   --color-banana: #ffe062;
   --color-ivory: #fff3d4;
+  --color-light-purple: #cc94c4;
+  --color-violet: #a8b3d8;
   /*  Size    */
   --size-border-radius: 4px;
   /*    Font  Size     */
@@ -48,6 +50,12 @@ ul {
 }
 ol {
   list-style: none;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 /*    블라인드 처리   */
 .blind {
@@ -88,7 +96,7 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-light-sky-blue);
+  background-color: var(--color-violet);
   align-items: center;
   padding: 16px;
 }
@@ -98,11 +106,15 @@ p {
 #logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  color: var(--color-white);
+}
+#logo a {
+  color: var(--color-white);
 }
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
-  color: var(--color-true-black);
+  color: var(--color-white);
   cursor: pointer;
   border-radius: var(--size-border-radius);
 }
@@ -111,4 +123,28 @@ p {
 }
 .navbar__menu__item:hover {
   background-color: var(--color-white);
+}
+#home {
+  background: url(/image/home-background.png) center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+#home__avatar {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  border: 2px solid var(--color-white);
+}
+.home__title,
+.home_description {
+  color: var(--color-white);
+}
+.home__contact {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
 }
