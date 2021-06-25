@@ -28,6 +28,8 @@
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+  /*    Animation    */
+  --animation-duration: 300ms;
 }
 /*  Universal tags */
 * {
@@ -119,10 +121,10 @@ p {
   border-radius: var(--size-border-radius);
 }
 .navbar__menu__item.active {
-  border: 1px solid var(--color-true-black);
+  border: 1px solid var(--color-white);
 }
 .navbar__menu__item:hover {
-  background-color: var(--color-white);
+  background-color: transparent;
 }
 #home {
   background: url(/image/home-background.png) center/cover no-repeat;
@@ -147,4 +149,60 @@ p {
   color: var(--color-white);
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+/*  Section common */
+.section {
+  text-align: center;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/*    About major    */
+.adbout__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+.major__icon {
+  width: 170px;
+  height: 170px;
+  font-size: 72px;
+  line-height: 170px;
+  border: 1px solid var(--color-violet);
+  border-radius: 50%;
+  margin-bottom: 16px;
+  color: var(--color-sky-blue);
+}
+.major__icon i {
+  transition: all var(--animation-duration) ease;
+}
+.major__icon:hover i {
+  transform: rotate(-30deg) scale(1.1);
+  color: var(--color-violet);
+}
+.major__title,
+.major__description {
+  color: var(--color-dark-gray);
+}
+.major__description {
+  font-size: var(--font-small);
+}
+.job {
+  display: flex;
+  align-items: center;
+}
+.job_description {
+  margin: 0 16px;
+}
+.job_peroid,
+.job__name {
+  color: var(--color-light-gray);
+}
+.job__name {
+  font-size: var(--font-small);
+}
+.job_peroid {
+  font-size: var(--font-micro);
 }
