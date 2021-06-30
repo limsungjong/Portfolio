@@ -394,6 +394,8 @@ p {
 .testimonial__speach--bubble a {
   color: var(--color-violet);
 }
+
+/*    contact    */
 #contact {
   background-color: var(--color-violet);
 }
