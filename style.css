@@ -106,7 +106,7 @@ p {
   align-items: center;
   padding: 16px;
 }
-#navbar__menu {
+.navbar__menu {
   display: flex;
 }
 #logo {
@@ -130,6 +130,17 @@ p {
 .navbar__menu__item:hover {
   background-color: transparent;
 }
+
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  top: 22px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
+}
+
+/*    Home     */
 #home {
   background: url(/image/home-background.png) center/cover no-repeat;
   padding: 40px;
@@ -188,6 +199,10 @@ p {
 .major__icon:hover i {
   transform: rotate(-30deg) scale(1.1);
   color: var(--color-violet);
+}
+.major__title {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
 }
 .major__title,
 .major__description {
@@ -417,4 +432,44 @@ p {
 }
 .conctact__links i:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .major {
+    margin-bottom: 32px;
+  }
+  .adbout__majors {
+    flex-direction: column;
+    margin: 50px 0;
+  }
+  .major__icon {
+    margin: 0 auto;
+  }
+  .skillSet {
+    flex-direction: column;
+  }
+  .work__projects {
+    justify-content: center;
+  }
+  .project {
+    flex-grow: 1;
+    margin: 8px;
+  }
+  .testimonial__avator {
+    width: 80px;
+    height: 80px;
+  }
 }
