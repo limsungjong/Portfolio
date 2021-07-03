@@ -11,10 +11,7 @@ document.addEventListener('scroll', () => {
     }
 });
 
-
-
 // Handle scrolling when tapping on the navbar__menu
-
 const navbar__menu = document.querySelector(".navbar__menu");
 navbar__menu.addEventListener('click', (event) => {
     const target = event.target;
@@ -23,6 +20,22 @@ navbar__menu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
-    const scroll__to = document.querySelector(link);
-    scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    scrollintoView(link);
 });
+
+// Home contact me button 
+const con__me__button = document.querySelector('.home__contact');
+con__me__button.addEventListener('click', () => {
+    scrollintoView('#contact');
+});
+
+// const contact__me__button = document.querySelector('.home__contact');
+// contact__me__button.addEventListener('click', () => {
+//     var location = document.querySelector("#contact").offsetTop;
+//     window.scrollTo({top:location, behavior:'smooth'});
+// });
+
+function scrollintoView(selector) {
+    const scroll__to = document.querySelector(selector)
+    scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+}
