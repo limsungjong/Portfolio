@@ -108,6 +108,8 @@ p {
   align-items: center;
   padding: 16px;
   transition: all var(--animation-duration) ease-in-out;
+  height: 88px;
+  z-index: 1;
 }
 #navbar.navbar__dark {
   background-color: var(--color-violet);
