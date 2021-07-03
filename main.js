@@ -39,3 +39,14 @@ function scrollintoView(selector) {
     const scroll__to = document.querySelector(selector)
     scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 }
+
+// make home slowly make fade transparent as the window scroll down
+const home = document.querySelector('#home__container');
+let home__height = home.getBoundingClientRect().height;
+home__height += navbar__height;
+document.addEventListener('scroll', () => {
+    if( window.scrollY > home__height) {
+        return;
+    }
+    home.style.opacity = 1 - window.scrollY / home__height;
+});

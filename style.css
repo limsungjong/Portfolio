@@ -156,6 +156,8 @@ p {
   padding: 40px;
   text-align: center;
   padding-top: 120px;
+  transition: all var(--animation-duration) ease;
+  opacity: 1;
 }
 #home__avatar {
   border-radius: 50%;
@@ -448,6 +450,7 @@ p {
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;
+    top: 36px;
   }
   #navbar {
     flex-direction: column;
@@ -458,6 +461,9 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+  }
+  #logo {
+    margin-top: 16px;
   }
   .major {
     margin-bottom: 32px;
