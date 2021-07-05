@@ -149,7 +149,6 @@ p {
   color: var(--color-white);
   display: none;
 }
-
 /*    Home     */
 #home {
   background: url(/image/home-background.png) center/cover no-repeat;
@@ -446,7 +445,25 @@ p {
 .conctact__links i:hover {
   transform: scale(1.2);
 }
-
+/*    Arrow up Btn     */
+.arrow__top-btn {
+  color: var(--color-true-white);
+  background-color: var(--color-light-purple);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  font-size: var(--font-large);
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease;
+  pointer-events: none;
+}
+.arrow__top-btn.down {
+  opacity: 1;
+  pointer-events: auto;
+}
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;

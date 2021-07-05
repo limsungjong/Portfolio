@@ -50,3 +50,18 @@ document.addEventListener('scroll', () => {
     }
     home.style.opacity = 1 - window.scrollY / home__height;
 });
+
+// show "arrow up" btn when scrolling down 
+const arrow__btn = document.querySelector('.arrow__top-btn');
+document.addEventListener('scroll', () => {
+    if(window.scrollY > home__height / 2 ) {
+        arrow__btn.classList.add('down');
+    } else {
+        arrow__btn.classList.remove('down');
+    }
+});
+
+// Handle click on the "arrow up" btn 
+arrow__btn.addEventListener('click', () => {
+    scrollintoView('#home');
+});
