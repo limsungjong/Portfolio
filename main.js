@@ -19,8 +19,11 @@ navbar__menu.addEventListener('click', (event) => {
 
     if(link == null) {
         return;
+    } else {
+        const height = document.querySelector(link).offsetTop;
+        scrollintoView(link,height,navbar__height);
     }
-    scrollintoView(link);
+
 });
 
 // Home contact me button 
@@ -28,17 +31,6 @@ const con__me__button = document.querySelector('.home__contact');
 con__me__button.addEventListener('click', () => {
     scrollintoView('#contact');
 });
-
-// const contact__me__button = document.querySelector('.home__contact');
-// contact__me__button.addEventListener('click', () => {
-//     var location = document.querySelector("#contact").offsetTop;
-//     window.scrollTo({top:location, behavior:'smooth'});
-// });
-
-function scrollintoView(selector) {
-    const scroll__to = document.querySelector(selector)
-    scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-}
 
 // make home slowly make fade transparent as the window scroll down
 const home = document.querySelector('#home__container');
@@ -65,3 +57,37 @@ document.addEventListener('scroll', () => {
 arrow__btn.addEventListener('click', () => {
     scrollintoView('#home');
 });
+
+// Work 
+
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+workBtnContainer.addEventListener('click', (e) => {
+    const filter__btn = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter__btn == undefined) {
+        return;
+    }
+    projectContainer.classList.add('anim-out');
+    setTimeout(() => {
+        projects.forEach((project) => {
+            if(filter__btn === '*' || filter__btn === project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+});
+
+function scrollintoView(selector,location,navbar__height) {
+    const scroll__to = document.querySelector(selector);
+    if(location != null) {
+        window.scrollTo({top:location - navbar__height, behavior:'smooth'});
+    } else {
+        scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
+
+}
