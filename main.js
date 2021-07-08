@@ -13,17 +13,24 @@ document.addEventListener('scroll', () => {
 
 // Handle scrolling when tapping on the navbar__menu
 const navbar__menu = document.querySelector(".navbar__menu");
+const navbar__btn = navbar__menu.querySelectorAll('.navbar__menu__item');
 navbar__menu.addEventListener('click', (event) => {
     const target = event.target;
     const link = target.dataset.link;
-
     if(link == null) {
         return;
     } else {
         const height = document.querySelector(link).offsetTop;
         scrollintoView(link,height,navbar__height);
     }
-
+// navbar menu 'click' scrolling
+    navbar__btn.forEach(element => {
+        if(link == element.dataset.link) {
+            element.classList.add('active');
+        } else {
+            element.classList.remove('active');
+        }
+    });
 });
 
 // Home contact me button 
@@ -58,7 +65,7 @@ arrow__btn.addEventListener('click', () => {
     scrollintoView('#home');
 });
 
-// Work 
+// Work categortise btn click project filtering
 
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
@@ -69,6 +76,15 @@ workBtnContainer.addEventListener('click', (e) => {
     if(filter__btn == undefined) {
         return;
     }
+    // work category click btn in  
+    // activate btn when btn is clicked in work category
+    const active = document.querySelector('.category__btn.selected');
+    console.log(active);
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
+    // filter projects by clicking on a btn in a work category
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
         projects.forEach((project) => {
@@ -80,6 +96,15 @@ workBtnContainer.addEventListener('click', (e) => {
         });
         projectContainer.classList.remove('anim-out');
     }, 300);
+    // work category btn active
+    // const cate__btn = workBtnContainer.querySelectorAll('.category__btn');
+    // cate__btn.forEach((btn) => {
+    //     if(btn.dataset.filter == filter__btn) {
+    //         btn.classList.add('active');
+    //     } else {
+    //         btn.classList.remove('active');
+    //     }
+    // });
 });
 
 function scrollintoView(selector,location,navbar__height) {
@@ -89,5 +114,4 @@ function scrollintoView(selector,location,navbar__height) {
     } else {
         scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }
-
 }
