@@ -11,6 +11,12 @@ document.addEventListener('scroll', () => {
     }
 });
 
+// Navbar toggle btn for smarll screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle__btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbar__menu.classList.toggle('open');
+});
+
 // Handle scrolling when tapping on the navbar__menu
 const navbar__menu = document.querySelector(".navbar__menu");
 const navbar__btn = navbar__menu.querySelectorAll('.navbar__menu__item');
@@ -20,6 +26,7 @@ navbar__menu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     } else {
+        navbar__menu.classList.remove('open');
         const height = document.querySelector(link).offsetTop;
         scrollintoView(link,height,navbar__height);
     }
@@ -76,7 +83,6 @@ workBtnContainer.addEventListener('click', (e) => {
     if(filter__btn == undefined) {
         return;
     }
-    // work category click btn in  
     // activate btn when btn is clicked in work category
     const active = document.querySelector('.category__btn.selected');
     console.log(active);
