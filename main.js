@@ -85,7 +85,6 @@ workBtnContainer.addEventListener('click', (e) => {
     }
     // activate btn when btn is clicked in work category
     const active = document.querySelector('.category__btn.selected');
-    console.log(active);
     active.classList.remove('selected');
     const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
     target.classList.add('selected');
