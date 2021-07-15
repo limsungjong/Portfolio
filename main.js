@@ -162,7 +162,6 @@ window.addEventListener('scroll', () => {
         document.body.clientHeight) {
         selectedNavIndex = navItems.length - 1 ;
     }
-
     if(navItems[5].classList.contains('active')) {
         selectedNavIndex = 4;
     }
@@ -180,7 +179,6 @@ function scrollintoView(selector,location,navbar__height) {
     if(location != null) {
         window.scrollTo({top:location - navbar__height, behavior:'smooth'});
     } else {
-        selectNavItem(navItems[sectionIds.indexOf(selector)]);
         scroll__to.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }
 }
