@@ -166,6 +166,7 @@ window.addEventListener('scroll', () => {
         selectedNavIndex = 4;
     }
     selectNavItem(navItems[selectedNavIndex]);
+    console.log(window.innerHeight);
 });
 
 function selectNavItem(selected) {
